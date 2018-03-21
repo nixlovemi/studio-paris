@@ -7,6 +7,39 @@ html, body {
     background-color: #FFF;
     line-height: 135%;
 }
+select, textarea, input[type="tel"], input[type="text"], input[type="email"], input[type="search"], input[type="password"], .form-control {
+    width: 100%;
+    height: 34px;
+    display: block;
+    vertical-align: top;
+    padding: 6px 10px;
+    background-image: none;
+    border-width: 1px;
+    border-style: solid;
+    line-height: 1.42857143;
+    box-sizing:border-box;
+}
+select, textarea, input[type="tel"], input[type="text"], input[type="email"], input[type="search"], input[type="password"], .form-control {
+    background-color: #fff;
+    border-color: #cfcfcf;
+    font-size: 14px;
+    color: #777;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: border-color 0.2s ease-in-out;
+    -moz-transition: border-color 0.2s ease-in-out;
+    transition: border-color 0.2s ease-in-out;
+}
 .responsive-img{
     display: block;
     max-width: 100%;
@@ -241,6 +274,10 @@ html, body {
     border: solid 5px #fff;
     padding: 10px 15px 0px 15px;
 }
+#slider-top #logo-top a{
+  text-decoration: none;
+  color: inherit;
+}
 #slider-top #menu-top{
     font-weight: bold;
     position: absolute;
@@ -324,6 +361,10 @@ html, body {
 .blog-home .bh-item .content p:last-child{
     margin-bottom: 0px;
 }
+.blog-home .bh-item .title a{
+  text-decoration: none;
+  color: inherit;;
+}
 .blog-section-title{
   font-size: 36px;
   padding: 12px 0;
@@ -353,6 +394,54 @@ html, body {
 }
 #blog-tag-list li:last-child{
   margin-right: 0;
+}
+.article{ }
+.article .article-info{
+  padding: 10px 0;
+  border-bottom: 1px solid #cfcfcf;
+}
+.article .article-info span {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.5em;
+  color: #000;
+}
+.article .article-info span ~ span {
+  margin: 0 0 0 10px;
+  padding: 0 0 0 10px;
+  border-left: 1px solid #cfcfcf;
+}
+.article .article-content{
+  margin: 15px 0 0 0;
+  font-size: 18px;
+  line-height: 130%;
+}
+.article .article-content img{
+  max-width: 100%;
+  height: auto;
+  display: block;;
+}
+.article .article-content p{
+  margin-bottom: 9px;
+}
+.article .article-content p:last-child{
+  margin-bottom: 0;
+}
+.article .article-content .featured-image{
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+#article-comments .article-comments-title{
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+#article-comments .article-comments-form{ }
+#article-comments .article-comments-form label{
+  display: inline-block;
+}
+#article-comments .article-comments-form textarea{
+  min-height: 90px;
 }
 #footer{
     width: 100%;

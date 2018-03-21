@@ -19,12 +19,14 @@
     <body>
         <div id="slider-top">
             <div id="logo-top">
-                STUDIO PARIS
+                <a href="./">
+                  STUDIO PARIS
+                </a>
             </div>
             <div id="overlay-top"></div>
             <div id="menu-top">
                 <ul>
-                    <li><a class="selected" href="javascript:;">HOME</a></li>
+                    <li><a class="selected" href="./">HOME</a></li>
                     <li><a href="./blog.php">BLOG</a></li>
                     <li>
                         <a class="tooltip" data-tooltip-content="#tooltip_menu_prod" href="javascript:;">PRODUTOS</a>
