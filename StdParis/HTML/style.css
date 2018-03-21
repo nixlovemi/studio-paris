@@ -289,9 +289,10 @@ html, body {
 #content{
     width: 100%;
     display: inline-block;
-
-    background: url(images/contentblock_bg_image.png) 50% 0 no-repeat;
-    background-size: cover;
+}
+.content-background{
+  background: url(images/contentblock_bg_image.png) 50% 0 no-repeat;
+  background-size: cover;
 }
 .images-display-home .col{
     position: relative;
@@ -323,6 +324,36 @@ html, body {
 .blog-home .bh-item .content p:last-child{
     margin-bottom: 0px;
 }
+.blog-section-title{
+  font-size: 36px;
+  padding: 12px 0;
+}
+.bh-tags{ }
+.bh-tags a{
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+  margin: 15px 15px 0 0;
+  font-size: 12px;
+  line-height: 1.5em;
+}
+.bh-tags a:hover{
+  color: #a9886d;
+}
+#blog-tag-list{ }
+#blog-tag-list li{
+  display: inline-block;;
+  margin-right: 10px;
+}
+#blog-tag-list li:last-child{
+  margin-right: 0;
+}
 #footer{
     width: 100%;
     display: inline-block;
@@ -330,7 +361,7 @@ html, body {
     background: #000 url(images/footer_bg_image.png) 50% 0 no-repeat;
     background-size: auto auto;
     background-size: cover;
-    
+
     padding-bottom: 30px;
 }
 #footer .footer-sections{ }
@@ -357,7 +388,7 @@ html, body {
     -o-transition: all 1s ease;
     -ms-transition: all 1s ease;
     transition: all 1s ease;
-    
+
     color: #FFF;
 }
 #footer .footer-sections .fs-item .content p:last-child{
