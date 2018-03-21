@@ -3,6 +3,10 @@ $( document ).ready(function() {
         adaptiveHeight: true,
         captions: false
     });
+    $('#slider-product-single ul').slippry({
+        adaptiveHeight: true,
+        captions: false
+    });
     $('.tooltip').tooltipster({
         contentCloning: true,
         contentAsHTML: true,

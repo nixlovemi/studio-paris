@@ -34,7 +34,7 @@
                             <span id="tooltip_menu_prod">
                                 <ul>
                                     <li>
-                                        <a href="javascript:;">Boiserie</a>
+                                        <a href="./product-single.php">Boiserie</a>
                                     </li>
                                 </ul>
                             </span>
