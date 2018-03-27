@@ -31,6 +31,8 @@
             <div id="overlay-top"></div>
             <div id="menu-top">
                 <?php
+                global $wp;
+
                 $menu      = wp_get_nav_menu_object("sp_menu_header");
                 $menuItems = wp_get_nav_menu_items( $menu->term_id );
 
@@ -55,11 +57,14 @@
                     }
 
                     if ( $menuItem->menu_item_parent == 0 ) {
-                      $url   = ($menuItem->url == "" || $menuItem->url == "#") ? "javascript:;": $menuItem->url;
-                      $title = $menuItem->title;
+                      $url      = ($menuItem->url == "" || $menuItem->url == "#") ? "javascript:;": $menuItem->url;
+                      $title    = $menuItem->title;
+
+                      $currentUrl = home_url($wp->request) . "/";
+                      $selected   = ($currentUrl == $url) ? " selected ": "";
 
                       echo "<li>";
-                      echo "  <a class='$classSub' $propSub href='$url'>";
+                      echo "  <a class='$classSub $selected' $propSub href='$url'>";
                       echo "    $title";
                       echo "  </a>";
 

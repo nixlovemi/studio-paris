@@ -21,4 +21,6 @@ $( document ).ready(function() {
         side: 'top',
         theme: 'tooltipster-light'
     });
+
+    setTimeout(" $('.isa_info_box').fadeOut('slow', function(){ $('.isa_info_box').remove(); }); ", 5000);
 });

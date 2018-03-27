@@ -349,6 +349,12 @@ select, textarea, input[type="tel"], input[type="text"], input[type="email"], in
     width: 100%;
     display: inline-block;
 }
+#content p{
+  margin-bottom: 9px;
+}
+#content p:last-child{
+  margin-bottom: 0;
+}
 .content-background{
   background: url(images/contentblock_bg_image.png) 50% 0 no-repeat;
   background-size: cover;
@@ -376,12 +382,6 @@ select, textarea, input[type="tel"], input[type="text"], input[type="email"], in
 .blog-home .bh-item .metadata{ }
 .blog-home .bh-item .content{
     font-size: 16px;
-}
-.blog-home .bh-item .content p{
-    margin-bottom: 9px;
-}
-.blog-home .bh-item .content p:last-child{
-    margin-bottom: 0px;
 }
 .blog-home .bh-item .title a{
   text-decoration: none;
@@ -444,12 +444,6 @@ select, textarea, input[type="tel"], input[type="text"], input[type="email"], in
   height: auto;
   display: block;;
 }
-.article .article-content p{
-  margin-bottom: 9px;
-}
-.article .article-content p:last-child{
-  margin-bottom: 0;
-}
 .article .article-content .featured-image{
   float: left;
   margin-right: 20px;
@@ -471,12 +465,6 @@ select, textarea, input[type="tel"], input[type="text"], input[type="email"], in
 .product-single{
   font-size: 17px;
 }
-.product-single p{
-  margin-bottom: 9px;
-}
-.product-single p:last-child{
-  margin-bottom: 0;
-}
 .quem-somos{
   color: #e1e1e1;
   font-size: 16px;
@@ -485,16 +473,19 @@ select, textarea, input[type="tel"], input[type="text"], input[type="email"], in
 .quem-somos .title{
   color: #e1e1e1;
 }
-.quem-somos p, .template-page-content p{
-  margin-bottom: 9px;
-}
-.quem-somos p:last-child, .template-page-content p:last-child{
-  margin-bottom: 0;
-}
 #slider-product-single img, .product-single img{
   display: block;
   max-width: 100%;
   height: auto;
+}
+.article-comments-form label{
+  color: #777;
+}
+.contact-button{
+  float: right;
+}
+.contact-body p:last-child{
+  margin-bottom: 0;
 }
 #footer{
     width: 100%;
@@ -640,7 +631,7 @@ ol.commentlist li.thread-odd {}
 #commentform label{
   display: inline-block;
 }
-#commentform textarea{
+#commentform textarea, .article-comments-form textarea{
   min-height: 90px;
 }
 #commentform #submit{
@@ -667,4 +658,30 @@ ol.commentlist li.thread-odd {}
 #respond #reply-title{
   font-size: 24px;
   margin-bottom: 40px;
+}
+
+.isa_info, .isa_success, .isa_warning, .isa_error {
+  margin: 10px 0px;
+  padding:12px;
+}
+.isa_info {
+  color: #00529B;
+  background-color: #BDE5F8;
+}
+.isa_success {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+}
+.isa_warning {
+  color: #9F6000;
+  background-color: #FEEFB3;
+}
+.isa_error {
+  color: #D8000C;
+  background-color: #FFD2D2;
+}
+.isa_info i, .isa_success i, .isa_warning i, .isa_error i {
+  margin:10px 22px;
+  font-size:2em;
+  vertical-align:middle;
 }
