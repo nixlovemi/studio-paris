@@ -2,9 +2,22 @@
 get_header();
 ?>
 
+<?php
+// check if comes from category link
+$catTitle   = ucfirst(single_cat_title("", false));
+$isCategory = $catTitle != "";
+?>
+
 <div id="pre-content">
     <div class="content-wrap">
-        <h1 class="blog-section-title">BLOG</h1>
+        <?php
+        if($isCategory){
+            echo "<h1 class='blog-section-title'>CATEGORIA: $catTitle</h1>";
+            echo "<p>BLOG</p>";
+        } else {
+            echo "<h1 class='blog-section-title'>STUDIO PARIS DECORAÇÃO - BLOG</h1>";
+        }
+        ?>
     </div>
 </div>
 
@@ -18,8 +31,11 @@ get_header();
             <ul id="blog-tag-list">
               <?php
               foreach($arrCategories as $catName => $category){
+                $cssCat = (strtolower($catTitle) == strtolower($catName)) ? " button-selected ": "";
+                $catURL = get_category_link( $category->term_id );
+
                 echo "<li>";
-                echo "  <a href='javascript:;' class='button'>$catName</a>";
+                echo "  <a href='$catURL' class='button $cssCat'>$catName</a>";
                 echo "</li>";
               }
               ?>
@@ -65,6 +81,23 @@ get_header();
                     <?php echo $postExcerpt; ?>
                   </p>
               </div>
+
+              <p class="bh-tags mb-15">
+                <?php
+                $post_categories = wp_get_post_categories( $postId );
+                $cats = array();
+
+                foreach($post_categories as $c){
+                    $cat     = get_category( $c );
+                    $catName = $cat->name;
+                    $catURL  = get_category_link( $cat->term_id );
+
+                    echo "<a href='$catURL'>";
+                    echo "  <i class='fas fa-tag'></i> $catName";
+                    echo "</a>";
+                }
+                ?>
+              </p>
 
               <p>
                   <a href="<?php echo $postLink; ?>" class="button">LEIA MAIS</a>

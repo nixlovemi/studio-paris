@@ -39,38 +39,77 @@
                               }
                             }
                             ?>
-
-                            <?php
-                            /*
-                            <p><a href="<?php echo esc_url( home_url( '/' ) ); ?>">HOME</a></p>
-                            <p><a class="tooltip-footer" data-tooltip-content="#tooltip_menu_prod" href="javascript:;">PRODUTOS</a></p>
-                            <p><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">BLOG</a></p>
-                            <p><a href="javascript:;">CONTATO</a></p>
-                            */
-                            ?>
                         </div>
                     </div>
                     <div class="col span_1_of_3 fs-item">
                         <div class="title">SIGA-NOS</div>
                         <div class="content">
                             <ul class="social-footer">
-                                <li>
-                                    <i class="fab fa-facebook-square" aria-hidden="true"></i>
-                                </li>
-                                <li>
-                                    <i class="fab fa-twitter-square" aria-hidden="true"></i>
-                                </li>
-                                <li>
-                                    <i class="fab fa-youtube-square" aria-hidden="true"></i>
-                                </li>
+                                <?php
+                                $idPaginaHome    = 4;
+                                $socialPhone     = simple_fields_value("sf_fields_home_social_telefone", $idPaginaHome);
+                                $socialFacebook  = simple_fields_value("sf_fields_home_social_facebook", $idPaginaHome);
+                                $socialTwitter   = simple_fields_value("sf_fields_home_social_twitter", $idPaginaHome);
+                                $socialYoutube   = simple_fields_value("sf_fields_home_social_youtube", $idPaginaHome);
+                                $socialInstagram = simple_fields_value("sf_fields_home_social_instagram", $idPaginaHome);
+                                $socialEmail     = simple_fields_value("sf_fields_home_social_email", $idPaginaHome);
+
+
+                                if($socialFacebook != ""){
+                                    echo "<li>";
+                                    echo "  <a href='$socialFacebook' target='_blank'>";
+                                    echo "    <i class='fab fa-facebook-square' aria-hidden='true'></i>";
+                                    echo "  </a>";
+                                    echo "</li>";
+                                }
+                                
+                                if($socialTwitter != ""){
+                                    echo "<li>";
+                                    echo "  <a href='$socialTwitter' target='_blank'>";
+                                    echo "    <i class='fab fa-twitter-square' aria-hidden='true'></i>";
+                                    echo "  </a>";
+                                    echo "</li>";
+                                }
+                                
+                                if($socialYoutube != ""){
+                                    echo "<li>";
+                                    echo "  <a href='$socialYoutube' target='_blank'>";
+                                    echo "    <i class='fab fa-youtube-square' aria-hidden='true'></i>";
+                                    echo "  </a>";
+                                    echo "</li>";
+                                }
+                                
+                                if($socialInstagram != ""){
+                                    echo "<li>";
+                                    echo "  <a href='$socialInstagram' target='_blank'>";
+                                    echo "    <i class='fab fa-instagram' aria-hidden='true'></i>";
+                                    echo "  </a>";
+                                    echo "</li>";
+                                }
+
+                                if($socialEmail != ""){
+                                    echo "<li>";
+                                    echo "  <a href='mailto:$socialEmail?Subject=Contato' target='_blank'>";
+                                    echo "    <i class='far fa-envelope' aria-hidden='true'></i>";
+                                    echo "  </a>";
+                                    echo "</li>";
+                                }
+                                ?>
                             </ul>
                         </div>
                     </div>
                     <div class="col span_1_of_3 fs-item">
                         <div class="title">CONTATO</div>
                         <div class="content">
-                            <p>+55 11 3468-3244</p>
-                            <p>studioparis@gmail.com</p>
+                            <?php
+                            if($socialPhone != ""){
+                                echo "<p>$socialPhone</p>";
+                            }
+                            
+                            if($socialEmail != ""){
+                                echo "<p>$socialEmail</p>";
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>

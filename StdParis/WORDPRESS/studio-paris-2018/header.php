@@ -24,7 +24,7 @@
     <body>
         <div id="slider-top">
             <div id="logo-top">
-                <a href="./">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
                   STUDIO PARIS
                 </a>
             </div>
@@ -88,7 +88,8 @@
             </div>
 
             <?php
-            $sliderUrls = simple_fields_values("sf_fields_home_slider_url_imagem", 4);
+            $idPaginaHome = 4;
+            $sliderUrls   = simple_fields_values("sf_fields_home_slider_url_imagem", $idPaginaHome);
             ?>
             <ul id="out-of-the-box-demo">
                 <?php

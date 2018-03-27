@@ -97,11 +97,14 @@ select, textarea, input[type="tel"], input[type="text"], input[type="email"], in
     backface-visibility: hidden;
     transition: background 0.2s ease-in-out,color 0.2s ease-in-out;
 }
-.button:hover{
+.button:hover, .button-selected{
     color: #fff;
     background: #a9886d;
     border-color: #a9886d;
     text-decoration: none;
+}
+.button-selected{
+    color: #FFF !important;
 }
 .tooltip, .tooltip-footer{ }
 .mt-0 {
@@ -535,7 +538,7 @@ select, textarea, input[type="tel"], input[type="text"], input[type="email"], in
 #footer .social-footer li:last-child{
     margin-right: 0;
 }
-#footer .social-footer .fab{
+#footer .social-footer .fab, #footer .social-footer .far{
     position: relative;
     left: 0;
     font-size: 36px;
