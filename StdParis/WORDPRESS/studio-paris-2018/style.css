@@ -320,11 +320,11 @@ select, textarea, input[type="tel"], input[type="text"], input[type="email"], in
     font-weight: bold;
     font-size: 24px;
 }
-#tooltip_menu_prod li a{
+.tooltip_templates ul li a{
     font-size: 18px;
 }
-#slider-top #menu-top ul li a, #tooltip_menu_prod li a{
-    color: inherit;
+#slider-top #menu-top ul li a, .tooltipster-base li a{
+    color: #FFF !important;
     text-decoration: none;
     padding: inherit;
 }

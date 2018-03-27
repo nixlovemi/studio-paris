@@ -30,23 +30,56 @@
             </div>
             <div id="overlay-top"></div>
             <div id="menu-top">
-                <ul>
-                    <li><a class="selected" href="<?php echo esc_url( home_url( '/' ) ); ?>">HOME</a></li>
-                    <li><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">BLOG</a></li>
-                    <li>
-                        <a class="tooltip" data-tooltip-content="#tooltip_menu_prod" href="javascript:;">PRODUTOS</a>
-                        <div class="tooltip_templates">
-                            <span id="tooltip_menu_prod">
-                                <ul>
-                                    <li>
-                                        <a href="./product-single.php">Boiserie</a>
-                                    </li>
-                                </ul>
-                            </span>
-                        </div>
-                    </li>
-                    <li><a href="javascript:;">CONTATO</a></li>
-                </ul>
+                <?php
+                $menu      = wp_get_nav_menu_object("sp_menu_header");
+                $menuItems = wp_get_nav_menu_items( $menu->term_id );
+
+                if(!empty($menuItems)){
+                  echo "<ul>";
+
+                  foreach( $menuItems as $menuItem ) {
+                    $parentId  = $menuItem->ID;
+                    $menuArray = [];
+                    $classSub  = "";
+                    $propSub   = "";
+                    $nameDvSub = "";
+
+                    $arrChild  = get_nav_menu_item_children($parentId, $menuItems);
+                    foreach( $arrChild as $submenu ) {
+                      if( $submenu->menu_item_parent == $parentId ) {
+                        $nameDvSub   = "tooltip_menu_prod_$parentId";
+                        $classSub    = "tooltip";
+                        $propSub     = ' data-tooltip-content="#'.$nameDvSub.'" ';
+                        $menuArray[] = "<li><a href='".$submenu->url."'>".$submenu->title."</a></li>";
+                      }
+                    }
+
+                    if ( $menuItem->menu_item_parent == 0 ) {
+                      $url   = ($menuItem->url == "" || $menuItem->url == "#") ? "javascript:;": $menuItem->url;
+                      $title = $menuItem->title;
+
+                      echo "<li>";
+                      echo "  <a class='$classSub' $propSub href='$url'>";
+                      echo "    $title";
+                      echo "  </a>";
+
+                      if(count($menuArray) > 0){
+                        echo "<div class='tooltip_templates'>";
+                        echo "  <span id='$nameDvSub'>";
+                        echo "    <ul>";
+                        echo "    " . implode("", $menuArray);
+                        echo "    </ul>";
+                        echo "  </span>";
+                        echo "</div>";
+                      }
+
+                      echo "</li>";
+                    }
+                  }
+
+                  echo "</ul>";
+                }
+                ?>
             </div>
 
             <?php
