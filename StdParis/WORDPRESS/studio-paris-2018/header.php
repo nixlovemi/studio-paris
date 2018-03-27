@@ -31,8 +31,8 @@
             <div id="overlay-top"></div>
             <div id="menu-top">
                 <ul>
-                    <li><a class="selected" href="./">HOME</a></li>
-                    <li><a href="./blog.php">BLOG</a></li>
+                    <li><a class="selected" href="<?php echo esc_url( home_url( '/' ) ); ?>">HOME</a></li>
+                    <li><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">BLOG</a></li>
                     <li>
                         <a class="tooltip" data-tooltip-content="#tooltip_menu_prod" href="javascript:;">PRODUTOS</a>
                         <div class="tooltip_templates">

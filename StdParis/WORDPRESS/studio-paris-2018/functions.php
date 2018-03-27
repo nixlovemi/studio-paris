@@ -47,3 +47,26 @@ function get_attachment_id( $url ) {
 	}
 	return $attachment_id;
 }
+
+function getArrUniqueCatFromPosts(){
+  $arrRetCat = [];
+
+  $cat_args=array(
+    'orderby' => 'name',
+    'order' => 'ASC'
+     );
+  $categories=get_categories($cat_args);
+  foreach($categories as $category) {
+    $args=array(
+      'showposts' => -1,
+      'category__in' => array($category->term_id),
+      'caller_get_posts'=>1
+    );
+    $posts=get_posts($args);
+    if ($posts) {
+        $arrRetCat[$category->name] = $category;
+    } // if ($posts
+  } // foreach($categories
+
+  return $arrRetCat;
+}

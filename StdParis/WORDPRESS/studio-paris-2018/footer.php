@@ -4,9 +4,9 @@
                     <div class="col span_1_of_3 fs-item">
                         <div class="title">INFORMAÇÃO</div>
                         <div class="content">
-                            <p><a href="./">HOME</a></p>
+                            <p><a href="<?php echo esc_url( home_url( '/' ) ); ?>">HOME</a></p>
                             <p><a class="tooltip-footer" data-tooltip-content="#tooltip_menu_prod" href="javascript:;">PRODUTOS</a></p>
-                            <p><a href="./blog.php">BLOG</a></p>
+                            <p><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">BLOG</a></p>
                             <p><a href="javascript:;">CONTATO</a></p>
                         </div>
                     </div>
